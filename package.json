@@ -1,0 +1,17 @@
+{
+  "name": "newstart",
+  "version": "1.0.0",
+  "description": "resumePorfolio shan2onWhiteley",
+  "main": "index.js",
+  "homepage": "https://shan2on.github.io/modernCV",
+  "scripts": {
+    "sass": "node-sass -w sass/ -o css/ --recursive",
+    "deploy": "gh-pages -d dist"
+  },
+  "author": "shannon whiteley",
+  "license": "MIT",
+  "dependencies": {
+    "gh-pages": "^1.2.0",
+    "node-sass": "^4.9.3"
+  }
+}

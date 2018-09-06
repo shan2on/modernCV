@@ -1,0 +1,190 @@
+//import config files
+@import "config";
+@import "menu";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  color: setTextColor($colour1);
+  background: $colour1;
+  height: 100%;
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.5;
+}
+
+//headers
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-weight: 400;
+
+  &.headingLrg {
+    font-size: 6rem;
+  }
+  &.headingSml {
+    margin-bottom: 2rem;
+    padding: 0.2rem, 1rem;
+  }
+}
+
+//header positioning
+header {
+  position: relative;
+  z-index: 14;
+  width: 100%;
+}
+
+//links
+a {
+  color: #fff;
+  text-decoration: none;
+
+  &:hover {
+    color: $colour2;
+    @include easeOut();
+  }
+}
+
+//secondary text
+.text2 {
+  color: $colour2;
+}
+
+//main section
+main {
+  padding: 4rem;
+  //height: 100%
+  min-height: calc(100vh-60px);
+
+  &#home {
+    overflow: hidden;
+    h1 {
+      margin-top: 15vh;
+    }
+  }
+
+  .icons {
+    margin-top: 1rem;
+    a {
+      padding: 0.4rem;
+    }
+  }
+}
+
+.aboutInfo {
+  display: grid;
+  grid-template-areas: "bioImage bio bio" "job1 job2 job3";
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 30px;
+
+  .bioImage {
+    grid-area: bioImage;
+    margin: auto;
+    border-radius: 50%;
+    border: $colour2 1px solid;
+  }
+
+  .bio {
+    grid-area: bio;
+    font-size: 1.5rem;
+  }
+  .job1 {
+    grid-area: job1;
+  }
+  .job2 {
+    grid-area: job2;
+  }
+  .job3 {
+    grid-area: job3;
+  }
+
+  .job {
+    background: lighten($colour1, 5);
+    padding: 0.5rem;
+    border-bottom: $colour2 1px solid;
+  }
+}
+
+// work-projects page
+.projects {
+  display: grid;
+  grid-gap: 0.7rem;
+  grid-template-columns: repeat(3, 1fr);
+
+  img {
+    width: 100%;
+    border: 3px, #fff solid;
+
+    &:hover {
+      opacity: 0.5;
+      border-color: $colour2;
+      @include easeOut;
+    }
+  }
+}
+
+// contact
+.boxes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 1rem;
+
+  div {
+    font-size: 2rem;
+    padding: 1.5rem 2.5rem;
+    border: 3px #fff solid;
+    margin-bottom: 3rem;
+    @include easeOut;
+
+    &:hover {
+      padding: 0.5rem 1.5rem;
+      background: $colour2;
+      color: setTextColor($colour2);
+      span {
+        color: setTextColor($colour2);
+      }
+    }
+  }
+}
+
+// Button Styles
+.btn {
+  // inline-block looks better
+  // display: inline-block;
+  display: block;
+  padding: 0.5rem 1rem;
+  border: 0;
+  margin-bottom: 0.3rem;
+  &:hover {
+    background: $colour2;
+    color: setTextColor($colour2);
+  }
+}
+
+.btn-dark {
+  @extend .btn;
+  background: darken($colour1, 50);
+  color: #fff;
+}
+
+.btn-light {
+  @extend .btn;
+  background: lighten($colour1, 50);
+  color: #333;
+}
+
+//footer aross all pages
+#mainFooter {
+  text-align: center;
+  padding: 1rem;
+  background: $colour1;
+  color: setTextColour($colour2);
+  height: 60px;
+}
+@import "mobile";
