@@ -6,7 +6,7 @@
   "homepage": "https://shan2on.github.io/modernCV",
   "scripts": {
     "sass": "node-sass -w sass/ -o css/ --recursive",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d html"
   },
   "author": "shannon whiteley",
   "license": "MIT",
